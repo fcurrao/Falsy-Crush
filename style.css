@@ -1,0 +1,527 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanalei+Fill&display=swap');
+
+/*----------------------------------------------
+                BASIC
+----------------------------------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(2-02.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: 50%;
+    padding: 0 10px;
+    user-select: none;
+    background-image: url("images/jungle-vector.jpg");
+}
+
+html,
+body {
+    overflow: hidden;
+    font-family: Oxygen;
+    color: #004225;
+}
+
+.select-item {
+    border: 3px solid #fafafa;
+    border-radius: 5px;
+}
+
+
+/*----------------------------------------------
+            OVERLAY Y MODALES
+----------------------------------------------*/
+
+.overlay-inicio,
+.overlay-reinicio,
+.overlay-niveles,
+.overlay-timeout {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    overflow-y: hidden;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay-timeout {
+    z-index: 8;
+}
+
+.contenedor-timeout {
+    z-index: 7;
+}
+
+.contenedor-bienvenida {
+    z-index: 6;
+}
+
+.overlay-inicio {
+    z-index: 5;
+}
+
+.contenedor-niveles {
+    z-index: 4;
+}
+
+.overlay-niveles {
+    z-index: 3;
+}
+
+.contenedor-reinicio {
+    z-index: 2;
+}
+
+.overlay-reinicio {
+    z-index: 1;
+}
+
+.contenedor-bienvenida,
+.contenedor-niveles,
+.contenedor-reinicio,
+.contenedor-timeout {
+    width: 40vw;
+    position: relative;
+    background-color: #a5d610;
+    border: 3px solid #004225;
+    text-align: center;
+    border-radius: 15px;
+    margin: 10px 30px;
+    padding: 0 30px;
+    /* display: inline-block; */
+    transform: translate(-50%, -50%);
+}
+
+.contenedor-bienvenida {
+    top: 36%;
+    left: 20%;
+}
+
+.contenedor-niveles,
+.contenedor-reinicio,
+.contenedor-timeout {
+    top: 20%;
+    left: 20%;
+}
+
+.titulo-bienvenida {
+    font-weight: 400;
+    font-size: 50px;
+    font-family: "Hanalei Fill";
+    margin: 25px 0;
+    text-shadow: 2px 2px 4px #fafafa;
+}
+
+.titulo-controles,
+.titulo-niveles,
+.titulo-nuevo-juego,
+.titulo-timeout {
+    font-family: "Hanalei Fill";
+    font-size: 28px;
+    text-align: center;
+    margin: 20px 20px 10px 20px;
+    text-shadow: 2px 2px 4px #fafafa;
+}
+
+.txt-nuevo-juego {
+    margin-bottom: 20px;
+}
+
+.txt-bienvenida,
+.txt-controles,
+.txt-nuevo-juego,
+.txt-timeout {
+    font-size: 16px;
+    text-shadow: 2px 2px 4px #fafafa;
+}
+
+.txt-bienvenida {
+    padding: 10px;
+}
+
+.txt-controles,
+.txt-nuevo-juego {
+    padding: 2px;
+}
+
+.boton-basico {
+    text-align: center;
+    width: 150px;
+    height: 50px;
+    padding: 10px;
+    margin: 20px;
+    background-color: #004225;
+    color: #fafafa;
+    font-size: 24px;
+    font-family: "Hanalei Fill";
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.size-emoji {
+    font-size: 25px;
+}
+
+.boton-niveles {
+    width: 200px;
+    padding: 5px;
+    margin: 10px;
+}
+
+
+/*----------------------------------------------
+            SECCIÓN PRINCIPAL
+----------------------------------------------*/
+
+.seccion-principal {
+    height: 100vh;
+}
+
+.nombre-juego {
+    font-size: 50px;
+    font-family: "Hanalei Fill";
+    margin: 3px 0;
+    color: #004225;
+    text-shadow: 2px 2px 4px #fafafa;
+    text-align: center;
+}
+
+.contenedor-juego {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    background-color: #a5d610;
+    border: 3px solid #004225;
+    padding: 3px 5px;
+    border-radius: 10px;
+    color: #fafafa;
+}
+
+.contenedor-puntaje {
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+    font-family: "Hanalei Fill";
+    font-weight: 100;
+}
+
+.contenedor-puntaje p {
+    display: flex;
+}
+
+#combo {
+    width: 20px;
+    margin-right: 20px;
+}
+
+#puntaje {
+    margin-left: 15px;
+}
+
+.img-input,
+.info-button,
+.refresh-button {
+    cursor: pointer;
+}
+
+.img-input {
+    width: 35px;
+    height: 35px;
+}
+
+.info-button,
+.refresh-button {
+    width: 30px;
+    height: 30px;
+    margin-left: 8px;
+}
+
+.contenedor-timer,
+.contenedor-refresh {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-family: "Hanalei Fill";
+    font-weight: 100;
+    flex-wrap: nowrap;
+}
+
+.caja-grilla {
+    position: relative;
+    width: 610px;
+    height: 510px;
+    width: auto;
+    height: 505px;
+    border-radius: 10px;
+    border: 3px solid #004225;
+    background-color: #42424280;
+    justify-content: center;
+    flex-wrap: wrap;
+    display: flex;
+    box-sizing: content-box;
+}
+
+#grilla {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 34px;
+    box-sizing: content-box;
+    text-align: center;
+    transition: top 0.08s, left 0.08s;
+    cursor: pointer;
+}
+
+#grilla div {
+    margin: 1px;
+    box-sizing: content-box;
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.contenedor-info {
+    z-index: 1;
+    width: 40vw;
+    position: relative;
+    background-color: #a5d610;
+    border: 3px solid #004225;
+    text-align: center;
+    border-radius: 15px;
+    margin: 10px 30px;
+    padding: 0 30px;
+    /* display: inline-block; */
+    transform: translate(-50%, -50%);
+    position: fixed;
+    top: 42%;
+    left: 48%;
+}
+
+.section-temporizador{
+    width: 250px;
+    position: fixed;
+    bottom: 5%;
+    right: 40%;
+    border-radius: 10px;
+    border: 3px solid #004225;
+    background-color: #a5d610;
+    justify-content: flex-end;
+    align-items: flex-end;
+    color: #004225;
+    font-family: Oxygen;
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+}
+
+.firmas {
+    width: 250px;
+    position: fixed;
+    bottom: 5%;
+    right: 4%;
+    border-radius: 10px;
+    border: 3px solid #004225;
+    background-color: #a5d610;
+    justify-content: flex-end;
+    align-items: flex-end;
+    color: #004225;
+    font-family: Oxygen;
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #fafafa;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #004225;
+}
+
+a:focus {
+    color: #fafafa;
+    font-weight: bold;
+}
+
+
+/*----------------------------------------------
+                RESPONSIVE
+----------------------------------------------*/
+
+@media (max-width: 600px) {
+
+    /*----------------------------------------------
+                OVERLAY Y MODALES
+    ----------------------------------------------*/
+    .contenedor-bienvenida,
+    .contenedor-niveles,
+    .contenedor-reinicio,
+    .contenedor-timeout {
+        width: 90vw;
+        position: relative;
+        background-color: #a5d610;
+        border: 3px solid #004225;
+        text-align: center;
+        border-radius: 15px;
+        margin: 10px 30px;
+        padding: 0 30px;
+        /* display: inline-block; */
+        transform: translate(-50%, -50%);
+    }
+
+    .contenedor-bienvenida,
+    .contenedor-niveles,
+    .contenedor-reinicio,
+    .contenedor-timeout {
+        top: 0;
+        left: 0;
+    }
+
+    .titulo-bienvenida {
+        font-size: 35px;
+    }
+
+    .titulo-controles,
+    .titulo-niveles,
+    .titulo-nuevo-juego,
+    .titulo-timeout {
+        font-size: 20px;
+    }
+
+    .txt-bienvenida,
+    .txt-controles,
+    .txt-nuevo-juego,
+    .txt-timeout {
+        font-size: 16px;
+    }
+
+    .size-emoji {
+        font-size: 20px;
+    }
+
+    /* .boton-niveles {
+        width: 200px;
+        padding: 5px;
+        margin: 10px;
+    }*/
+    /*----------------------------------------------
+                SECCIÓN PRINCIPAL
+    ----------------------------------------------*/
+    .seccion-principal {
+        height: 100vh;
+    }
+
+    .nombre-juego {
+        font-size: 35px;
+    }
+
+    .contenedor-puntaje {
+        font-size: 24px;
+        font-weight: 100;
+    }
+
+    #combo {
+        width: 18px;
+    }
+
+    .img-input {
+        width: 30px;
+        height: 30px;
+    }
+
+    .contenedor-timer,
+    .contenedor-refresh {
+        font-size: 20px;
+    }
+
+    .caja-grilla {
+        max-width: 590px;
+        max-height: 510px;
+    }
+
+    #grilla {
+        font-size: 30px;
+    }
+}
+
+@media (min-width: 1300px) {
+    /*----------------------------------------------
+                    BASIC
+    ----------------------------------------------*/
+
+
+    /*----------------------------------------------
+                OVERLAY Y MODALES
+    ----------------------------------------------*/
+
+    .contenedor-bienvenida {
+        top: 46%;
+    }
+
+    .titulo-bienvenida {
+        font-size: 60px;
+    }
+
+    .titulo-controles,
+    .titulo-niveles,
+    .titulo-nuevo-juego,
+    .titulo-timeout {
+        font-size: 32px;
+    }
+
+    .txt-bienvenida,
+    .txt-controles,
+    .txt-nuevo-juego,
+    .txt-timeout {
+        font-size: 20px;
+    }
+
+    /*----------------------------------------------
+                SECCIÓN PRINCIPAL
+    ----------------------------------------------*/
+
+    .nombre-juego {
+        font-size: 70px;
+        margin: 20px;
+    }
+
+    .contenedor-juego {
+        margin-bottom: 15px;
+
+    }
+
+}
+
+/*----------------------------------------------
+                DISPLAY NONE
+----------------------------------------------*/
+
+.oculto {
+    display: none;
+}
+
+.fuera-de-foco {
+    opacity: 0;
+    visibility: hidden;
+    left: 2500px;
+}

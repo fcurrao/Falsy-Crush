@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <title> Falsy Crush</title>
+
+</head>
+
+<body>
+
+    <section class="overlay-info">
+        
+    </section>
+    <section class="overlay-inicio">
+
+        <div class="contenedor-bienvenida">
+
+            <h2 class="titulo-bienvenida">¡Bienvenid@!</h2>
+            <div class="contenedor-txt-bienvenida">
+                <p class="txt-bienvenida">En  Falsy Crush tu objetivo es juntar tres o más ítems del mismo tipo, ya sea en fila o columna. Para eso, selecciona un ítem y a continuación un ítem adyacente para intercambiarlos de lugar.</p>
+                <p class="txt-bienvenida">Si se forma un grupo, esos ítems se eliminarán y ganarás puntos. ¡Sigue armando grupos de 3 o más antes de que se acabe el tiempo!</p>
+                <p class="txt-bienvenida">El tiempo solo es para el nivel Dificil</p>
+
+                <h4 class="titulo-controles">Controles</h4>
+                <p class="txt-controles">Click izquierdo: selección</p>
+                <p class="txt-controles">Enter o Espacio: selección</p>
+                <p class="txt-controles">Flechas o WASD: movimiento e intercambio</p>
+
+                <h2>A jugar!</h2>
+                <h3>Elegi que te gusta?</h3>
+                <button type="button" class="boton-basico" id="boton-comenzar-emojis">Emojis</button>
+                <button type="button" class="boton-basico" id="boton-comenzar-animales">Animales</button>
+                <button type="button" class="boton-basico" id="boton-comenzar-colores">Colores</button>
+                <button type="button" class="boton-basico" id="boton-comenzar-frutas">Frutas</button>
+                <button type="button" class="boton-basico" id="boton-comenzar-dobleSentido">Zarpado</button>
+
+            </div>
+
+        </div>
+
+    </section>
+    
+
+
+    <section class="overlay-niveles ">
+
+        <div class="contenedor-niveles">
+
+            <h2 class="titulo-niveles">Nuevo Juego</h2>
+            <p class="txt-controles">Selecciona el nivel de juego para poder comenzar a jugar!</p>
+
+            <button type="button" class="boton-basico boton-niveles" id="boton-nivel-facil"><span class="size-emoji">😎 </span> Fácil</button>
+            <button type="button" class="boton-basico boton-niveles" id="boton-nivel-intermedio"><span class="size-emoji">😅 </span>Intermedio</button>
+            <button type="button" class="boton-basico boton-niveles" id="boton-nivel-dificil"><span class="size-emoji">😡 </span>Difícil</button>
+
+
+
+        </div>
+
+    </section>
+
+    <section class="overlay-reinicio fuera-de-foco">
+
+        <div class="contenedor-reinicio">
+            <h2 class="titulo-nuevo-juego">¿Jugar de nuevo?</h2>
+            <div class="contenedor-mensaje-nuevo-juego">
+                <p class="txt-nuevo-juego">Perderás todo tu puntaje acumulado!</p>
+            </div>
+
+            <div class="modal-button">
+                <button type="button" class="boton-basico boton-niveles" id="boton-cancelar">Cancelar</button>
+                <button type="button" class="boton-basico boton-niveles" id="boton-nuevo-juego">Nuevo Juego</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="overlay-timeout fuera-de-foco">
+
+        <div class="contenedor-timeout">
+            <h2 class="titulo-timeout">¡Juego terminado!</h2>
+            <div class="contenedor-mensaje-timeout">
+                <p class="txt-timeout">Puntaje final: <span id="puntaje-final">0</span></p>
+            </div>
+
+            <div class="modal-button">
+                <button type="button" class="boton-basico boton-niveles" id="boton-nuevo-juego-timeout">Nuevo Juego</button>
+                <button type="button" class="boton-basico boton-niveles" id="boton-reiniciar-timeout">Reiniciar</button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="seccion-principal">
+        <h1 class="nombre-juego">Falsy Crush</h1>
+
+        <div class="contenedor-juego">
+            <div class="contenedor-puntaje">
+                <p>Combo x<span id="combo">1</span></p>
+                <p>Puntos: <span id="puntaje">0</span></p>
+
+            </div>
+
+            <div class="contenedor-refresh">
+                <input type="image" src="images/icons8-info-64.png" alt="Solicitar información sobre el juego" id="boton-info" class="info-button">
+                <input type="image" src="images/refresh.png" alt="Volver a barajar las fichas del tablero" class="refresh-button">
+                <input type="image" src="images/new.png" alt="Volver a elegir opciones"  id="boton-reload" class="refresh-button">
+            </div>
+        </div>
+
+        <div class="caja-grilla">
+
+            <!-- Grilla se arma en JS -->
+
+        </div>
+
+        <div class="firmas">
+            <p class="txt-firmas">By <a href="https://github.com/fcurrao" target="_blank" class="firma-rosy">@Fcurrao</a></p> 
+        </div>
+
+    </section>
+
+<section class="section-temporizador">
+    <div id="temporizador">
+        
+    </div>
+</section>
+
+ 
+
+
+
+    <script src="index.js "></script>
+</body>
+
+</html>
