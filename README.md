@@ -1,6 +1,6 @@
 # Juego al estilo candy crush 
 
-## URL del juego: xxxxxxxxxxxxx
+## URL del juego: [JUEGO](https://falsycrush.netlify.app/)
 
 
 ## Tecnologías / Technologies:
